@@ -4,20 +4,20 @@ Go to your terminal, run `docker --version` to make sure that docker is running 
 
 ### Build Image
 
-Navigate to the project folder and into the notebooks folder.  \n
-E.g. C:/Users/user/Desktop/jupyter-test/notebooks  \n 
+Navigate to the project folder and into the notebooks folder. <br>
+E.g. C:/Users/user/Desktop/jupyter-test/notebooks  <br>
 Run the following code to build the jupyter notebook image
 ```
 docker build -t <image name> .
 ```
-Note that "image name" can be any name as specified by the user  \n 
+Note that "image name" can be any name as specified by the user <br>
 **.** : Tells docker to look for 'Dockerfile' and build the image in current dir
 
 ### Run Image
 ```
 docker run --rm -it -p 8811:8888 -v //c/Users/user/Desktop/jupyter-test/notebooks:/home/jovyan/work -e JUPYTER_ENABLE_LAB=yes <image name>
 ```
-For windows users, it is important that our absolute directory starts with //c/ \n
+For windows users, it is important that our absolute directory starts with //c/ <br>
 Some explnation on the commands:
 - **--rm**: remove the container once we exit.
 - **-it**: allows connection to container's stdin channel, so when user do a ctrl+C to exit the container, **--rm** will be executed.
