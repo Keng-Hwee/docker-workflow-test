@@ -1,0 +1,12 @@
+version: '3'
+services:
+  postgres-test:
+    image: 'postgres:latest'
+  jenkins-test:
+    image: 'jenkins:latest'
+  jupyter-test:
+    build:
+      dockerfile: 
+      context: ./notebooks
+    volumes:
+      - ./notebooks:/home/jovyan/work
